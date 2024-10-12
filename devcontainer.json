@@ -1,0 +1,13 @@
+{
+    "name": "Java Development Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "redhat.java"
+    ],
+    "forwardPorts": [8080]
+}
