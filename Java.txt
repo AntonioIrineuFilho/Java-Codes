@@ -126,11 +126,16 @@ Listas:
 
 Para manipular listas em java, utiliza-se a biblioteca java.util.ArrayList
 
-ArrayList<String>
+Para adicionar valores diretamente na declaração da lista, utiliza-se outra 
+biblioteca -> import java.util.Arrays
 
-ArrayList<Integer>
+ArrayList<Integer> numeros = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
 
-ArrayList<Double>
+ArrayList<String> -> lista de strings
+
+ArrayList<Integer> -> lista de numeros inteiros
+
+ArrayList<Double> -> lista de numeros reais
 
 import java.util.ArrayList;
 
