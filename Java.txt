@@ -1,0 +1,152 @@
+Todo programa java inicia com uma classe e um método main:
+
+public class Programa {
+	public static void main(String[] args) {
+
+	}
+}
+
+
+Entrada e Saída:
+
+
+import java.util.Scanner -> biblioteca para leitura de input
+
+O SCANNER SÓ PRECISA SER ABERTO UMA VEZ E DEVE SER FECHADO(scanner.close())
+
+import java.util.Scanner;
+
+public class EntradaSaida {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite seu nome: ");
+        String nome = scanner.nextLine();
+        System.out.println("Olá, " + nome + "!");
+    }
+}
+
+
+Declaração de Variáveis e Tipos de Dados:
+
+
+Para declarar variável, especifica o tipo, e dá um nome
+
+int idade -> inteiro
+
+double salário -> real
+
+char caractere -> um único caractere
+
+String -> sequência de caracteres
+
+boolean -> True ou False
+
+
+Conversão de String para int ou double:
+
+
+Ao receber um input, esse deve sempre ser uma string. Para convertê-lo em outro tipo de dado,
+deve-se utilizar o método Integer.parseInt(variavel) ou Double.parseDouble(variavel)
+
+	Scanner scanner = new Scanner(System.in);
+	System.out.print("Digite um número: ");
+	String input = scanner.nextLine();
+        
+	int numero = Integer.parseInt(input);
+
+	double numero = Double.parseDouble(input);
+
+
+Operadores:
+
+
+Aritméticos: +, -, *, /, %
+
+Relacionais: ==, !=, >, <, >=, <=
+
+Lógicos: && (AND), || (OR), ! (NOT)
+
+
+If e Else:
+
+
+public class Condicionais {
+    public static void main(String[] args) {
+        int idade = 20;
+        if (idade >= 18) {
+            System.out.println("Você é maior de idade.");
+        } else {
+            System.out.println("Você é menor de idade.");
+        }
+    }
+}
+
+
+Laços:
+
+
+public class Laços {
+    public static void main(String[] args) {
+        // Laço for
+        for (int i = 0; i < 5; i++) {
+            System.out.println("For: " + i);
+        }
+
+        // Laço while
+        int j = 0;
+        while (j < 5) {
+            System.out.println("While: " + j);
+            j++;
+        }
+    }
+}
+
+
+Formatação de Strings:
+
+
+Para formatar a saída de uma string deve-se utilizar o recurso String.format
+
+%s -> String
+
+%d -> Inteiro
+
+%f / %.2f -> Real / Real com duas casas decimais
+
+String nome = "Antônio";
+
+int idade  = 19;
+
+String texto = String.format("Meu nome é %s e eu tenho %d anos de idade", nome, idade);
+
+System.out.println(texto);
+
+
+Listas:
+
+Para manipular listas em java, utiliza-se a biblioteca java.util.ArrayList
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Criação de um ArrayList
+        ArrayList<String> frutas = new ArrayList<>();
+
+        // Adicionando elementos
+        frutas.add("maçã");
+        frutas.add("banana");
+        frutas.add("cereja");
+
+        // Acessando elementos
+        System.out.println(frutas.get(0));  // Saída: maçã
+
+        // Removendo elementos
+        frutas.remove("banana");
+
+        // Iterando sobre o ArrayList
+        for (String fruta : frutas) {
+            System.out.println(fruta);
+        }
+    }
+}
