@@ -126,6 +126,12 @@ Listas:
 
 Para manipular listas em java, utiliza-se a biblioteca java.util.ArrayList
 
+ArrayList<String>
+
+ArrayList<Integer>
+
+ArrayList<Double>
+
 import java.util.ArrayList;
 
 public class Main {
