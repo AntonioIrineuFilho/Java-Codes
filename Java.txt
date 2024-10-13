@@ -14,6 +14,21 @@ import java.util.Scanner -> biblioteca para leitura de input
 
 O SCANNER SÓ PRECISA SER ABERTO UMA VEZ E DEVE SER FECHADO(scanner.close())
 
+Para receber mais de um valor em uma linha, usa-se o nextInt ou nextDouble
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite dois números separados por espaço: ");
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        System.out.println("Você digitou: " + num1 + " e " + num2);
+    }
+}
+
+
 import java.util.Scanner;
 
 public class EntradaSaida {
