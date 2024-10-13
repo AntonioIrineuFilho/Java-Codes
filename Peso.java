@@ -12,5 +12,6 @@ public class Peso {
             containers = peso / capacidade + 1;
         }
         System.out.println(String.format("Quantidade de containers: %d\nPeso por container: %d", containers, (peso / containers)));
+        scanner.close();
     }
 }
