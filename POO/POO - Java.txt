@@ -1,0 +1,55 @@
+Ao criar uma classe dentro da classe principal ela deve possuir a sintxe "static", além da visibilidade
+
+Os atributos devem ser declarados antes do método construtor
+
+O método construtor deve possuir a sintaxe visibilidade + class + nome da classe
+
+Os atributos devem ser atribuidos ao this no método construtor -> this.atributo = atributo
+
+Os demais métodos devem possuir void se não tiverem retorno e o tipo de dado do método se tiver retorno 
+
+Exemplo: public void nomeMetodo() -> se não retornar nada
+         public int/double nomeMetodo() -> se retornar
+
+Se os atributos forem declarados com "public" eles podem ser alterados livremente fora da classe(não recomendado)
+
+Exemplo:
+
+public static class ClienteBanco {
+    public String nome;
+    public double saldo;
+    public ClienteBanco(String nome, double saldo) {
+        this.nome = nome;
+        this.saldo = saldo;
+    }
+}
+
+public static void main(String[] args) {
+    ClienteBanco cliente1 = new ClienteBanco("Antonio", 500);
+    cliente1.nome = "Joao";
+    System.out.println(cliente1.nome);
+}
+
+Ideal:
+
+public static class ClienteBanco {
+    private String nome;
+    private double saldo;
+    public ClienteBanco(String nome, double saldo) {
+        this.nome = nome;
+        this.saldo = saldo;
+    }
+    public void setNpme(String nome) {
+        this.nome = nome;
+    }
+}
+
+public static void main(String[] args) {
+    ClienteBanco cliente1 = new ClienteBanco("Antonio", 500);
+    cliente1.setNome("João");
+    System.out.println(cliente1.nome);
+}
+
+Nesse caso acima, os atributos não podem ser modificados diretamente fora da classe como
+no primeiro exemplo, para realizar essa modificação é necessário criar um método para a 
+alteração desejada(no caso, trocar o nome do cliente)
