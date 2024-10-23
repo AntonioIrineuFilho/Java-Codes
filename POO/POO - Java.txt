@@ -53,3 +53,7 @@ public static void main(String[] args) {
 Nesse caso acima, os atributos não podem ser modificados diretamente fora da classe como
 no primeiro exemplo, para realizar essa modificação é necessário criar um método para a 
 alteração desejada(no caso, trocar o nome do cliente)
+
+Quando eu chamo um método por uma classe -> Método estático(String.format(), por exemplo)
+
+Quando eu chamo um método em um objeto -> Método de instância
