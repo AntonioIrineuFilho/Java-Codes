@@ -32,7 +32,7 @@ public static void main(String[] args) {
 
 Ideal:
 
-public static class ClienteBanco {
+class ClienteBanco {
     private String nome;
     private double saldo;
     public ClienteBanco(String nome, double saldo) {
@@ -42,12 +42,24 @@ public static class ClienteBanco {
     public void setNpme(String nome) {
         this.nome = nome;
     }
+   public void setSaldo(double saldo) {
+         this.saldo = saldo;
+   }
+   public double getNpme() {
+         return this.nome;
+    }
+   public double getSaldo() {
+          return this.saldo;
+   }
 }
-
-public static void main(String[] args) {
-    ClienteBanco cliente1 = new ClienteBanco("Antonio", 500);
-    cliente1.setNome("João");
-    System.out.println(cliente1.nome);
+public class Banco {
+     public static void main(String[] args) {
+         ClienteBanco cliente1 = new ClienteBanco();
+         cliente1.setNome("João");
+         cliente1.setSaldo(500.75);
+         System.out.println(cliente1.getNome());
+         System.out.println(cliente1.getSaldo());
+    }
 }
 
 Nesse caso acima, os atributos não podem ser modificados diretamente fora da classe como
