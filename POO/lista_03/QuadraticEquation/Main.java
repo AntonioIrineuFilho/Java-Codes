@@ -86,6 +86,7 @@ public class Main {
                     break;
                 case 5:
                     main.setValores(scanner, obj);
+                    break;
                 case 6:
                     System.out.println("FIM DE EXECUÇÃO.");
                     run = false;
