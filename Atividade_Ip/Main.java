@@ -11,6 +11,7 @@ public class Main {
         System.out.print("Digite a máscara da rede(número 1 a 32): ");
         int numMask = scanner.nextInt();
         Network network1 = new Network(ip1, ip2, numMask);
+        System.out.println(network1.SameNetwork());
         scanner.close();
     }
 }
