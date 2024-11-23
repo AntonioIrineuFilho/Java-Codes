@@ -35,30 +35,13 @@ public class Network {
         String ip2 = this.ip2;
         int numMask = this.numMask;
         String mask = "";
-        String[] partesIp1 = new String[4];
-        String[] partesIp2 = new String[4];
+        String[] partesIp1 = ip1.split("\\.");
+        String[] partesIp2 = ip2.split("\\.");
+        String ip1Final = "";
+        String ip2Final = "";
         String andIp1Mask = "";
         String andIp2Mask = "";
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < ip1.length(); i++) {
-                if (ip1.charAt(j) == '.') {
-                    partesIp1[i] = ip1.substring(0, j);
-                    String ip1Sub = ip1.substring(j+1);
-                    ip1 = ip1Sub;
-                    break; }
-            }
-            for (int k = 0; k < ip2.length(); k++) {
-                if (ip2.charAt(k) == '.') {
-                    partesIp2[i] = ip2.substring(0, k);
-                    String ip2Sub = ip2.substring(k+1);
-                    ip2 = ip2Sub;
-                    break; }
-            }
-            if (i == 3) {
-                ip1 = "";
-                ip2 = "";
-            }
-        }
+        
         for (int i = 1; i < 33; i++) {
             if (i <= numMask) { mask += "1"; }
             else { mask += "0"; }
@@ -75,15 +58,15 @@ public class Network {
                 parteIp2 = parteIp2 / 2;
             }
             for (int k = 7; k >= 0; k--) {
-                ip1 += ip1Bin[k];
-                ip2 += ip2Bin[k];
+                ip1Final += ip1Bin[k];
+                ip2Final += ip2Bin[k];
             }
         }
         for (int i = 0; i < 32; i++) {
-            andIp1Mask += Integer.toString(Integer.parseInt(Character.toString(ip1.charAt(i))) & Integer.parseInt(Character.toString(mask.charAt(i))));
-            andIp2Mask += Integer.toString(Integer.parseInt(Character.toString(ip2.charAt(i))) & Integer.parseInt(Character.toString(mask.charAt(i))));
+            andIp1Mask += Integer.toString(Integer.parseInt(Character.toString(ip1Final.charAt(i))) & Integer.parseInt(Character.toString(mask.charAt(i))));
+            andIp2Mask += Integer.toString(Integer.parseInt(Character.toString(ip2Final.charAt(i))) & Integer.parseInt(Character.toString(mask.charAt(i))));
         }
-        if (andIp1Mask == andIp2Mask) {
+        if (andIp1Mask.equals(andIp2Mask)) {
             return true;
         } else {
             return false;
